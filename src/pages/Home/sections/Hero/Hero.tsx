@@ -5,6 +5,8 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../theme";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import CV from "../../../../assets/pdf/Curriculo-HiagoFerreiradaRocha.pdf"
+import Typewriter from "../../../../components/Typewriter/Typewriter";
 
 const Hero = () => {
     const StyledHero = styled("div")(({ theme }) => ({
@@ -26,6 +28,24 @@ const Hero = () => {
         border: `2px solid ${theme.palette.primary.contrastText}`,
     }));
 
+    const handleDownload = () => {
+        console.log("download")
+        // Create a link element
+        const link = document.createElement('a');
+        link.href = CV
+        link.download = 'Curriculo-HiagoFerreiradaRocha.pdf'; // Set the download attribute to specify the file name
+        // Append the link to the body
+        document.body.appendChild(link);
+        // Trigger the click event
+        link.click();
+        // Remove the link from the body
+        document.body.removeChild(link);
+    };
+
+    const handleEmail = () => {
+
+    }
+
     return (
         <>
             <StyledHero>
@@ -45,13 +65,13 @@ const Hero = () => {
                         <Grid item xs={12} md={7}>
 
                             <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Hiago da Rocha</Typography>
-                            <Typography color="primary.contrastText" variant="h2" textAlign="center">I'm a FullStack Developer</Typography>
+                            <Typewriter text="I'm a FullStack Developer" delay={120} variant="h2" color="primary.contrastText" />
 
                             <Grid container display={"flex"} justifyContent="center" spacing={3} pt={3}>
 
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
 
-                                    <StyledButton>
+                                    <StyledButton onClick={() => handleDownload()}>
                                         <DownloadIcon />
                                         <Typography>Download CV</Typography>
                                     </StyledButton>
@@ -60,7 +80,7 @@ const Hero = () => {
 
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
 
-                                    <StyledButton>
+                                    <StyledButton onClick={() => handleEmail()}>
                                         <MailOutlineIcon />
                                         <Typography>Contact me</Typography>
                                     </StyledButton>
