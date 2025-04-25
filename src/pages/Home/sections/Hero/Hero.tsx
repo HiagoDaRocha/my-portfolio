@@ -11,16 +11,20 @@ import Typewriter from "../../../../components/Typewriter/Typewriter";
 const Hero = () => {
     const StyledHero = styled("div")(({ theme }) => ({
         backgroundColor: theme.palette.primary.main,
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        [theme.breakpoints.up("xs")]: { // <= mobile
-            paddingTop: "100px"
+        width: "100%",
+        [theme.breakpoints.up('xs')]: {
+            display: "block",
+            padding: "20px",
+            paddingTop: "100px",
+            paddingBottom: "40px",
         },
-        [theme.breakpoints.up("md")]: { // >=mobile
-            paddingTop: "0",
+        [theme.breakpoints.up('md')]: {
+            display: "flex",
+            alignItems: "center",
+            paddingTop: "100px",
+            height: "100vh"
         },
-        }));
+    }));
 
     const StyledImg = styled("img")(() => ({
         width: "80%",
