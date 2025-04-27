@@ -15,7 +15,7 @@ const About: React.FC = () => {
     }));
 
     const skillsSet = [
-        "Javascript", "Typescript", "HTML", "CSS", "Git", "Docker", "Java", "PHP", "MySQL", "PostgreSQL", "Material UI", "Keycloak"
+        "Javascript", "Typescript", "HTML", "CSS", "Git", "Docker", "Java", "PHP", "MySQL", "PostgreSQL", "NestJS", "Keycloak"
     ]
 
     return (
