@@ -1,5 +1,5 @@
 import { Box, Container, Grid, styled, Typography } from "@mui/material";
-import Avatar from "../../../../assets/images/avatar.jpg";
+import Avatar from "../../../../assets/images/BeautyPlus_20250425225403170_save.jpg";
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
